@@ -49,10 +49,7 @@ public class Main {
         Scanner in = new Scanner(input);
         while (in.hasNextLine()) {
             String line = in.nextLine();
-            if (line.matches("[0-9]+")) {
-                Token token = new Token(TokenType.PLUS, line);
-                tokens.add(token);
-            } else if (line.equals("+")) {
+            if (line.equals("+")) {
                Token token = new Token(TokenType.PLUS, line);
                tokens.add(token);
             } else if (line.equals("-")) {
@@ -65,8 +62,14 @@ public class Main {
                 Token token = new Token(TokenType.PLUS, line);
                 tokens.add(token);
             } else {
-                System.err.println("Error: Unexpected character: " + line);
-                System.exit(1);
+                try {
+                    Double.parseDouble(line); 
+                    Token token = new Token(TokenType.PLUS, line);
+                    tokens.add(token);
+                } catch (Exception e) {
+                    System.err.println("Error: Unexpected character: " + line);
+                    System.exit(1);
+                }
             }
         }
         in.close();
