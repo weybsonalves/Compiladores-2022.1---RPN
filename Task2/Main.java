@@ -43,21 +43,21 @@ public class Main {
         }
     }
 
-	private static List<Token> scan(String sourceFilePath) throws IOException {
+    private static List<Token> scan(String sourceFilePath) throws IOException {
         List<Token> tokens = new ArrayList<>();
         File input = new File(sourceFilePath);
         Scanner in = new Scanner(input);
         while (in.hasNextLine()) {
             String line = in.nextLine();
             if (line.equals("+")) {
-               Token token = new Token(TokenType.PLUS, line);
-               tokens.add(token);
+                Token token = new Token(TokenType.PLUS, line);
+                tokens.add(token);
             } else if (line.equals("-")) {
                 Token token = new Token(TokenType.PLUS, line);
                 tokens.add(token);
             } else if (line.equals("*")) {
-               Token token = new Token(TokenType.PLUS, line);
-               tokens.add(token);
+                Token token = new Token(TokenType.PLUS, line);
+                tokens.add(token);
             } else if (line.equals("/")) {
                 Token token = new Token(TokenType.PLUS, line);
                 tokens.add(token);
