@@ -53,18 +53,18 @@ public class Main {
                 Token token = new Token(TokenType.PLUS, line);
                 tokens.add(token);
             } else if (line.equals("-")) {
-                Token token = new Token(TokenType.PLUS, line);
+                Token token = new Token(TokenType.MINUS, line);
                 tokens.add(token);
             } else if (line.equals("*")) {
-                Token token = new Token(TokenType.PLUS, line);
+                Token token = new Token(TokenType.STAR, line);
                 tokens.add(token);
             } else if (line.equals("/")) {
-                Token token = new Token(TokenType.PLUS, line);
+                Token token = new Token(TokenType.SLASH, line);
                 tokens.add(token);
             } else {
                 try {
                     Double.parseDouble(line); 
-                    Token token = new Token(TokenType.PLUS, line);
+                    Token token = new Token(TokenType.NUM, line);
                     tokens.add(token);
                 } catch (Exception e) {
                     System.err.println("Error: Unexpected character: " + line);
